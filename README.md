@@ -28,7 +28,7 @@ Gå til denne lenken https://github.com/rlangoy/uPy_APDS9960  for å se hvordan 
 # Installering av programvare (main.py)
 Steg 1: Last ned koden og pakk ut zip-fil
 
-Steg 2: Åpne main.py i thonny og last opp koden til micropython (bilde)
+Steg 2: Åpne main.py i thonny og lagre koden i micropython (bilde)
 
 Nå som man har både programvaren til snesorene og main.py lastet opp på micropython, så er den good to go.
 
