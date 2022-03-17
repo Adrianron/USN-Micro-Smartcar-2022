@@ -11,11 +11,13 @@ Instruksjon for å sette opp bilen og få programvaren til å fungere.
 # Thonny IDE set-up
 Installering av thonny IDE og micropython
 
-Steg 1: Installer thonny trykk på link https://thonny.org/
+Steg 1: Installer thonny ved å trykke på linken: https://thonny.org/
 
-Steg 2: Thonny når thonny er installert, klar for å installere micropython
+Steg 2: Når thonny er installert, kan man installere micropython
 
-/Images/micro1.PNG
+![](Images/micro1.PNG)
+
+![](Images/micro2.PNG)
 
 # Installering
 
