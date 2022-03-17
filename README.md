@@ -1,9 +1,11 @@
 # USN-Micro-Smartcar-2022
 En autonom modellbil som følger sort linje.
 
+Etter å ha fulgt stegene for å laste ned og sette opp thonny, så kan følge instruksjonene her for å gjøre det samme med programvaren
+
 Instruksjon for å sette opp bilen og få programvaren til å fungere.
 - Thonny IDE set-up, for å kunne laste ned programvaren et sted. Viser trinnvis hvordan man gjør det
-- - Følg lenke under kapittel "Set-up for Sensor (APDS9900)" for få tilgang til sensor bibliotek, følg instruksjonene der.
+- Følg lenke under kapittel "Set-up for Sensor (APDS9900)" for få tilgang til sensor bibliotek, følg instruksjonene der.
 - Instruksjon for å sette opp koden til å få bruke bilen funksjoner og definisjoner
 
 
