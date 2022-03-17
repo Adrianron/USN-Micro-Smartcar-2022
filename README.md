@@ -21,7 +21,7 @@ Steg 2: Når thonny er installert, kan man installere micropython (se bilder)
 ![](Images/micro2.PNG)
 
 # Set-up for Sensor (APDS9900)
-Gå til denne https://github.com/rlangoy/uPy_APDS9960 lenken for å se hvordan sensoren skal settes opp.
+Gå til denne lenken https://github.com/rlangoy/uPy_APDS9960  for å se hvordan sensoren skal settes opp.
 
 **Viktig å velge APDS9900 og ikke APDS9960!**
 
