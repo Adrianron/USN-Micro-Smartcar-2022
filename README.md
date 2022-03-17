@@ -15,6 +15,7 @@ Steg 1: Installer thonny trykk på link https://thonny.org/
 
 Steg 2: Thonny når thonny er installert, klar for å installere micropython
 
+/Images/micro1.PNG
 
 # Installering
 
