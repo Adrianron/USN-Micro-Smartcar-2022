@@ -36,11 +36,19 @@ led_4 = Pin(10, Pin.OUT)
 sensor_verdi = 900
 
 #Hastighet, fremover, svinge etc
-sving_hastighet = 4000
-sving_hastighet_motsatt = 20000
-fremover_hastighet = 13000 #Hastighet bane kjøring
-#fremover_hastighet_drag = 50000 #Hastighet drag kjøring
-
+sving_hastighet = 50000
+sving_hastighet_motsatt = 30000
+fremover_hastighet = 50000
+revers_hastighet = 65435
+#Hastighet bane kjøring
+#sving_hastighet = 30000
+#sving_hastighet_motsatt = 20000
+#fremover_hastighet = 30000
+#revers_hastighet = 40000
+#fremover_hastighet_drag = 50000
+#sving_hastighet_drag = 50000
+#sving_hastighet_motsatt_drag = 30000
+#revers_hastighet_drag = 65435
 
 #Defininerer de ulike kjørefunksjonene til bilen
 def run_forward():
@@ -52,9 +60,9 @@ def run_forward():
     PWM(motor_c).duty_u16(duty)
     
     #Alle dioder lyser
-    led_1.value(1) #led_1 PÅ
+    led_1.value(0) #led_1 PÅ
     led_2.value(1) #led_2 PÅ
-    led_3.value(1) #led_1 PÅ
+    led_3.value(0) #led_1 PÅ
     led_4.value(1) #led_2 PÅ
 
 def stop_bilen():
@@ -64,39 +72,54 @@ def stop_bilen():
     PWM(motor_c)
     duty=0
     PWM(motor_c).duty_u16(duty)
+    PWM(motor_b)
+    duty=0
+    PWM(motor_b).duty_u16(duty)
+    PWM(motor_d)
+    duty=0
+    PWM(motor_d).duty_u16(duty)
     
-    #Ingen dioder lyser
-    led_1.value(0) #led_1 AV
-    led_2.value(0) #led_2 AV
-    led_3.value(0) #led_1 AV
-    led_4.value(0) #led_2 AV
     
 def left_turn():
     PWM(motor_a)
-    duty=sving_hastighet_motsatt
-    PWM(motor_a).duty_u16(duty)
-    PWM(motor_c)
     duty=sving_hastighet
-    PWM(motor_c).duty_u16(duty)
+    PWM(motor_a).duty_u16(duty)
+    PWM(motor_d)
+    duty=sving_hastighet_motsatt
+    PWM(motor_d).duty_u16(duty)
     
     #Venstre side lyser
     led_1.value(0) #led_1 AV
     led_2.value(0) #led_2 AV
-    led_3.value(1) #led_1 PÅ
+    led_3.value(0) #led_1 PÅ
     led_4.value(1) #led_2 PÅ
 
     
 def right_turn():
-    PWM(motor_a)
-    duty=sving_hastighet
-    PWM(motor_a).duty_u16(duty)
-    PWM(motor_c)
+    PWM(motor_b)
     duty=sving_hastighet_motsatt
+    PWM(motor_b).duty_u16(duty)
+    PWM(motor_c)
+    duty=sving_hastighet
     PWM(motor_c).duty_u16(duty)
     
     #Høyre side lyser
-    led_1.value(1) #led_1 PÅ
+    led_1.value(0) #led_1 PÅ
     led_2.value(1) #led_2 PÅ
+    led_3.value(0) #led_1 AV
+    led_4.value(0) #led_2 AV
+    
+def reverse():
+    PWM(motor_b)
+    duty=revers_hastighet
+    PWM(motor_b).duty_u16(duty)
+    PWM(motor_d)
+    duty=revers_hastighet
+    PWM(motor_d).duty_u16(duty)
+    
+    #Ingen dioder lyser
+    led_1.value(0) #led_1 AV
+    led_2.value(0) #led_2 AV
     led_3.value(0) #led_1 AV
     led_4.value(0) #led_2 AV
     
@@ -108,12 +131,12 @@ while(True):
     # Aktiver proximity sensorering
     apds9900_a.prox.enableSensor()   
     apds9900_b.prox.enableSensor()   
-    sleep_ms(25)                     # Vent til sensoravlesning er klar
 
     #Kontrollerer bilens kjøreretning basert på sensorenes verdi
     if (apds9900_a.prox.proximityLevel < sensor_verdi and apds9900_b.prox.proximityLevel < sensor_verdi): #Stopp bil
-        stop_bilen()
-        #sleep_s(1)
+        reverse()
+        sleep_ms(2000) #Gjør at revers kjører i 2 sekunder, før den går videre til break
+        break #Avslutter loopen
         
     elif (apds9900_a.prox.proximityLevel < sensor_verdi ): #Svinge til venstre
         left_turn()
@@ -123,5 +146,7 @@ while(True):
 
     else:                 #Kjøre rett frem
         run_forward()
-      
+
+stop_bilen() #Etter break funksjon så kjører koden stopp definisjonen, slik at bilen stopper
+
       
