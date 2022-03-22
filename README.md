@@ -9,12 +9,12 @@ Instruksjon for å sette opp bilen og få programvaren til å fungere.
 - Instruksjon for å sette opp koden til å få bruke bilen funksjoner og definisjoner
 
 
-![](Images/micro2.PNG)
 
 # Set-up for Sensor (APDS9900)
 Gå til denne lenken https://github.com/rlangoy/uPy_APDS9960  for å se hvordan sensoren skal settes opp.
 
 **Viktig å velge APDS9900 og ikke APDS9960!**
+
 
 # Installering av programvare - main.py
 Steg 1: Last ned koden og pakk ut zip-fil.
