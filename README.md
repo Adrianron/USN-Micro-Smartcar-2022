@@ -35,3 +35,9 @@ Klikk OK og koden er nå lagret på mikrokontrolleren.
 
 Nå som man har både programvaren til sensorene og main.py lastet ned på micropython, så er den klar til bruk.
 
+
+# Flytdiagram for main.py
+Viser hvordan programmet fungerer
+
+![](Images/flytdiagram.png)
+
