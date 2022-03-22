@@ -9,24 +9,26 @@ Instruksjon for å sette opp bilen og få programvaren til å fungere.
 - Instruksjon for å sette opp koden til å få bruke bilen funksjoner og definisjoner
 
 
-![](Images/micro2.PNG)
 
 # Set-up for Sensor (APDS9900)
 Gå til denne lenken https://github.com/rlangoy/uPy_APDS9960  for å se hvordan sensoren skal settes opp.
 
 **Viktig å velge APDS9900 og ikke APDS9960!**
 
+
 # Installering av programvare - main.py
-Steg 1: Last ned koden og pakk ut zip-fil
+Steg 1: Last ned koden og pakk ut zip-fil.
 
-Steg 2: Åpne main.py i thonny og lagre koden i micropython, **Viktig at du lagrer med samme navn!**
+Åpne main.py i Thonny, slik vil den da se ut.
 
-(bilde) av koden i thonny
+![](Images/Kodethonny.png)
 
-(bilde) på steg for steg for lagre
+Steg 2: Mens koden er åpen i Thonny og mikrokontrolleren er koblet til PC-en, lagre koden i micropython. **Viktig at du lagrer med samme navn!**
 
-Nå som man har både programvaren til snesorene og main.py lastet opp på micropython, så er den klar til bruk.
+![](Images/saveas.png)
 
-# Hardware Set-up
+![](Images/savemain.png)
 
+
+Nå som man har både programvaren til sensorene og main.py lastet ned på micropython, så er den klar til bruk.
 
