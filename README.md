@@ -30,5 +30,8 @@ Steg 2: Mens koden er åpen i Thonny og mikrokontrolleren er koblet til PC-en, l
 ![](Images/savemain.png)
 
 
+Klikk OK og koden er nå lagret på mikrokontrolleren.
+
+
 Nå som man har både programvaren til sensorene og main.py lastet ned på micropython, så er den klar til bruk.
 
